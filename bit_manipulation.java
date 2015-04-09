@@ -2,7 +2,7 @@ package Main;
 
 import java.util.*;
 
-// note: for example usage of BitSet, see ch5_06_primes.java
+
 
 public class bit_manipulation {
 	
@@ -93,7 +93,7 @@ public class bit_manipulation {
     S = setAll(6); printSet(S);
     System.out.printf("\n");
 
-    System.out.printf("9. Other tricks (not shown in the book)\n");
+    System.out.printf("9. Other tricks \n");
     System.out.printf("8 %c 4 = %d\n", '%', modulo(8, 4));
     System.out.printf("7 %c 4 = %d\n", '%', modulo(7, 4));
     System.out.printf("6 %c 4 = %d\n", '%', modulo(6, 4));
