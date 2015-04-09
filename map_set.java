@@ -34,7 +34,7 @@ public class map_set {
     // the keys are names (string)!
     //                        (grace,75) 
     //           (billy,69)               (martin,81)   
-    //     (andy,80)   (felix,82)    (john,78)  (steven,77)
+    //     (andy,80)   (waled,82)    (john,78)  (steven,77)
 
     // iterating through the content of mapper will give a sorted output
     // based on keys (names)
@@ -46,7 +46,7 @@ public class map_set {
     System.out.println("==================");
 
     // interesting usage of SubMap
-    // display data between ["f".."m") ('felix' is included, martin' is excluded)
+    // display data between ["w".."d") ('waled' is included, martin' is excluded)
     SortedMap<String, Integer> res = mapper.subMap("f", "m");
     System.out.println(res.keySet());
     System.out.println(res.values());
