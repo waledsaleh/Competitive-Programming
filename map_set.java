@@ -25,7 +25,7 @@ public class map_set {
     mapper.put("billy", 69);  used_values.add(69);
     mapper.put("andy", 80);   used_values.add(80);
     mapper.put("steven", 77); used_values.add(77);
-    mapper.put("felix", 82);  used_values.add(82);
+    mapper.put("waled", 82);  used_values.add(82);
     mapper.put("grace", 75);  used_values.add(75);
     mapper.put("martin", 81); used_values.add(81);
 
