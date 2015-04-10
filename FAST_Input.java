@@ -14,7 +14,7 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class FAST_Input {
+public class FAST_Input/Output {
 	 public static void main(String[] args) throws IOException {
 	        Locale.setDefault(Locale.US);
 	        
