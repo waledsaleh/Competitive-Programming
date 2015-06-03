@@ -26,9 +26,9 @@ public class TC_519 {
 	
 	public static String getDay(String[]days)
 	{
-		//Map<String,Integer>map = new HashMap<String,Integer>();
+	
 		String[] s={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-		//map =m();
+		
 		String res ="";
 		for(int i = 0 ; i <s.length;++i)
 		{

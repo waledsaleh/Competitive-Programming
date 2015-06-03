@@ -42,7 +42,7 @@ public class TC_603 {
 			if(sb.length()%2!=0)
 			{
 				char ch1 = (char)sb.charAt(sb.length()/2);
-				//char ch2 = (char)sb.charAt(sb.length()/2-1);
+				
 				res +=ch1;
 		         sb.deleteCharAt(sb.length()/2)	;	
 			}

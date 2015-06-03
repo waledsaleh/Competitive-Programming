@@ -30,7 +30,7 @@ public class TC_173_500 {
 				  f=true;
 			  }
 		  }
-		  if(i !=0&&x=='Y'&&sb.charAt(sb.length()-1)=='C')
+		  if(i !=0 && x=='Y'&&sb.charAt(sb.length()-1)=='C')
 		  {
 			  sb.append("V");
 			  continue;
