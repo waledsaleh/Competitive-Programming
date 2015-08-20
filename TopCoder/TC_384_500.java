@@ -15,13 +15,13 @@ public class TC_384_500 {
 		
 	}
 	
-	static int documentAccess(String[] records, String[] userGroups, String[] roomRights)
+static int documentAccess(String[] records, String[] userGroups, String[] roomRights)
 	{
 		boolean first=false,sec=false;
 		HashSet<String>user = new HashSet<String>();
 		HashSet<String>room = new HashSet<String>();
 		
-		for(int i = 0 ; i <userGroups.length;++i )user.add(userGroups[i]);
+		for(int i = 0 ; i <userGroups.length;++i)user.add(userGroups[i]);
 		for(int i = 0 ; i < roomRights.length;++i)room.add(roomRights[i]);
 		
 		int count =0;
@@ -35,7 +35,7 @@ public class TC_384_500 {
 			if(user.contains(split[2]))first=true;
 			if(room.contains(split[1]))sec=true;
 			
-			if(first&&sec)
+			if(first && sec )
 			{
 				count++;
 				String[] s1 = records[i].split(" ");
