@@ -31,7 +31,7 @@ public class TCHS_SRM_56_DIV1 {
     	 int count =0;
     	 for(int i = 0; i < word1.length();++i)if(word1.charAt(i)!=word2.charAt(i))count++;
     	
-    	return (count>1?false:true);
+    	return ( count > 1 ? false : true );
     	 
      }
 } 
