@@ -17,7 +17,7 @@ public class TC_684 {
 	public static int count(String s, int k){
 	 
 		int res=0;int[] occ = new int[26];
-		for(char ch : s.toCharArray()){occ[ch-'a']++; }
+		for(char ch : s.toCharArray())occ[ch-'a']++;
 		 
 		while(k>0){
 			Arrays.sort(occ);
