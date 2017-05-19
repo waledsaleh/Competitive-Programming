@@ -54,7 +54,7 @@ public class TC_621_500DP {
 		return res;
 		
 	}
-	
+	//Another Solution
 	  static HashSet<Integer>map;
 static void allSum (int seq[],int i,int sum){
 		
