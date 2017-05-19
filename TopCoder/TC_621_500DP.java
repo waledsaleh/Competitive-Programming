@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -35,7 +37,7 @@ public class TC_621_500DP {
 		    int sum =0;
 		    
 		    for(int j = 0; j < n; j++){
-		        if((i&1<<j) > 0){ // bit j is on
+		        if((i&1<<j) > 0){ // if bit j is on
 		           sum +=S[j];
 		        }
 		    }
@@ -50,6 +52,38 @@ public class TC_621_500DP {
 		   }
 		
 		return res;
+		
+	}
+	
+	  static HashSet<Integer>map;
+static void allSum (int seq[],int i,int sum){
+		
+	    if(i<0){
+	    	
+	    map.add(sum);
+	    	return ;
+	    }
+	 
+	    map.add(sum);
+	    allSum(seq, i-1,seq[i]+sum);
+	    
+	    allSum(seq, i-1,sum);
+	    
+	}
+	static int MinNumber2(int[] S){
+		allSum(S,S.length-1,0);
+		
+	    int count = 1;
+			  Iterator<Integer> it = map.iterator();
+			  while(it.hasNext()){
+				  if(!map.contains(count)){
+					 return count;
+					  
+				  }
+				 
+				  ++count;
+			  }
+			    return 0;
 		
 	}
 }
