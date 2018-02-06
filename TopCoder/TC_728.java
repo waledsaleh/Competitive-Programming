@@ -3,7 +3,9 @@ class TC_728 {
 
     public static void main(String args[]) {
 
-        System.out.println(count(new int[]{3},1 ));
+        System.out.println(count(new int[]{987654321, 1000000000, 998244353, 123456789, 999999999}
+
+                ,1000000000 ));
 
     }
 
@@ -11,13 +13,13 @@ class TC_728 {
 
         int count = 0;
 
-        for(int i = 0,div = 0 ; i < S.length; ++i){
+        for(int i = 0 ; i < S.length; ++i){
 
-            div = S[i] == T ? S[i] : S[i] >> 1;
+            S[i] = S[i] == T ? S[i] : S[i] >> 1;
 
-            while(div  != T && div != 0)  div >>=  1;
+            while( S[i] != T && S[i] != 0)  S[i] >>=  1; // There exist math formula, but time has finished. So I'll write it later :)
 
-            count  += div == T ? 1 : 0;
+            count  += S[i] == T ? 1 : 0;
 
         }
 
