@@ -24,3 +24,4 @@ class TC_TCO_2017_Algorithm_Pittsburgh_DIV1 {
 
     }
 }
+
