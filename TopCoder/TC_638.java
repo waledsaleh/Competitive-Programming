@@ -25,13 +25,13 @@ public class TC_638 {
 	
 	static String toCamelCase2(String variableName) {
 
-             String res = "";
+              StringBuilder res = new StringBuilder("");
 
-             for (int i = 0, len = variableName.length(); i < len;
-                     res += variableName.charAt(i) == '_' ? (char) (variableName.charAt(++i) - 'a' + 'A') : variableName.charAt(i), ++i)
+                for (int i = 0, len = variableName.length(); i < len;
+                     res.append(variableName.charAt(i) == '_' ? (char) (variableName.charAt(++i) - 'a' + 'A') : variableName.charAt(i)), ++i)
                     ;
 
-                return res;
+                return res.toString();
             }	
 	
 }
