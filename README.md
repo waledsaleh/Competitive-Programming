@@ -11,6 +11,6 @@ TIMUS
 URI
 Icpc Live Archive
 this solutions for educational purpose,so when you CHEAT, when you COPY, you only cheat yourself!!!! Don't do it.
-There are some solutions under updating,it is not all solutions
+There are some solutions under updating.
 Good Luck :)
 
