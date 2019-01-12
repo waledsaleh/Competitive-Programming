@@ -25,12 +25,11 @@ public class TC_638 {
 	
 	static String toCamelCase2(String variableName) {
 
-                String res = "";
+             String res = "";
 
-                for (int i = 0, len = variableName.length(); i < len; ++i) {
-
-                    res += variableName.charAt(i) == '_' ? (char) (variableName.charAt(++i) - 'a' + 'A') : variableName.charAt(i);
-                }
+             for (int i = 0, len = variableName.length(); i < len;
+                     res += variableName.charAt(i) == '_' ? (char) (variableName.charAt(++i) - 'a' + 'A') : variableName.charAt(i), ++i)
+                    ;
 
                 return res;
             }	
