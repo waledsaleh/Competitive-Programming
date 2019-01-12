@@ -21,6 +21,18 @@ public class TC_638 {
 	  }
 	  return res;
    }
-	 
+	/* Another solution */
+	
+	static String toCamelCase2(String variableName) {
+
+                String res = "";
+
+                for (int i = 0, len = variableName.length(); i < len; ++i) {
+
+                    res += variableName.charAt(i) == '_' ? (char) (variableName.charAt(++i) - 'a' + 'A') : variableName.charAt(i);
+                }
+
+                return res;
+            }	
 	
 }
