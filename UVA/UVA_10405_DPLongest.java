@@ -20,9 +20,6 @@ public class UVA_10405_DPLongest {
       
       while(true)
       {
-    	  StringTokenizer st = new StringTokenizer(br.readLine());
-    	  int n = Integer.parseInt(st.nextToken());
-    	  int p =  Integer.parseInt(st.nextToken());
     	  s1=br.readLine();
     	  s2 = br.readLine();
     	  if(s1==null&&s2==null)break;
@@ -46,6 +43,18 @@ public class UVA_10405_DPLongest {
 	
 	
 	}
-	
+// 	 public static int longestSubsequence(String s1, String s2, int i, int j) {
+
+//         if (i >= s1.length() || j >= s2.length()) return 0;
+
+//         if (memo[i][j] != 0)
+//             return memo[i][j];
+
+//         if (s1.charAt(i) == s2.charAt(j))
+//             return memo[i][j] = 1 + longestSubsequence(s1, s2, i + 1, j + 1);
+
+//         return memo[i][j] = Math.max(longestSubsequence(s1, s2, i + 1, j), longestSubsequence(s1, s2, i, j + 1));
+
+    }
 	
 }
