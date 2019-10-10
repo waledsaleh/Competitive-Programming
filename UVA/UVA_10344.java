@@ -7,33 +7,29 @@ public class UVA_10344{
     static boolean flag = false;
  
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int[] arr = new int[5];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = input.nextInt();
-        }
- 
+           Scanner input = new Scanner(System.in);
+
         while (true) {
+            int[] arr = new int[5];
+
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = input.nextInt();
+            }
             if (arr[0] == 0 && arr[1] == 0 && arr[2] == 0 && arr[3] == 0
                     && arr[4] == 0)
                 break;
             Arrays.sort(arr);
- 
+
             do {
                 checkFor23(arr, 0, arr[0]);
- 
+
             } while (permuteLexically(arr) && !flag);
- 
-            if (flag)
-                System.out.println("Possible");
-            else
-                System.out.println("Impossible");
- 
+
+            System.out.println(flag ? "Possible" : "Impossible");
+
             flag = false;
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = input.nextInt();
-            }
         }
+
  
     }
  
@@ -69,10 +65,9 @@ public class UVA_10344{
         return true;
     }
  
-    private static void swap(int[] data, int k, int l) {
-        int x = data[k];
-        data[k] = data[l];
-        data[l] = x;
- 
+     private static void swap(int[] data, int k, int l) {
+        data[k] ^= data[l];
+        data[l] ^= data[k];
+        data[k] ^= data[l];
     }
 }

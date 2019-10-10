@@ -1,69 +1,81 @@
-package Main;
-
-import java.io.*;
-import java.util.HashSet;
-import java.util.IllegalFormatException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 public class UVA_729 {
- static HashSet<String>set = new HashSet<String>();
- 
-	public static void main(String[] args) throws FileNotFoundException {
-		 Scanner sc = new Scanner(System.in);
-	        int dataset=sc.nextInt();
-	        for(int i=0;i<dataset;i++){
-	          if(i!=0)
-	            System.out.println();
-	          int N=sc.nextInt();
-	          int H=sc.nextInt();
-	          String temp="";
-	          for(int j=0;j<(1<<N);j++){
-	               boolean stat=Integer.bitCount(j)==H;
-	               if(stat) 
-	                   temp=Integer.toBinaryString(j);
-	               for(int z=temp.length();z<N;z++)
-	                   temp="0"+temp;
-	               if(stat)
-	                System.out.println(temp);
-	               
-	          }
-	        }
-	}
-	public static void combString(String s) {
-	    set.add(s);
-	    char[] a = s.toCharArray();
-	    int n = a.length;
-	    int[] p = new int[n]; 
-	    int i = 1;
-	    while (i < n) {
-	        if (p[i] < i) {
-	            int j = ((i % 2) == 0) ? 0 : p[i];
-	            swap(a, i, j);
-	            // Print current
-	            set.add(join(a));
-	            p[i]++;
-	            i = 1;
-	        }
-	        else {
-	            p[i] = 0;
-	            i++;
-	        }
-	    }
-	}
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
 
-	private static String join(char[] a) {
-	    StringBuilder builder = new StringBuilder();
-	    builder.append(a);
-	    return builder.toString();
-	}
+        int t = sc.nextInt();
 
-	private static void swap(char[] a, int i, int j) {
-	    char temp = a[i];
-	    a[i] = a[j];
-	    a[j] = temp;
-	}
+        for (int i = 1; i <= t; ++i) {
+
+            sc.nextLine();
+
+            if (i > 1)
+                System.out.println();
+
+            int n = sc.nextInt(), h = sc.nextInt();
+
+            int[] arr = new int[n];
+            List<String> bits = new ArrayList<>();
+
+            generateBits(n, arr, bits);
+
+            Collections.sort(bits);
+
+            for (int k = 0; k < bits.size(); ++k) {
+                int countOnes = numOfOnes(bits.get(k));
+                if (countOnes == h)
+                    System.out.println(bits.get(k));
+            }
+
+        }
+
+    }
+
+    public static int numOfOnes(String bit) {
+        if (bit.length() == 0) return 0;
+
+        if (bit.charAt(0) == '1')
+            return 1 + numOfOnes(bit.substring(1));
+
+        return numOfOnes(bit.substring(1));
+    }
+
+    public static void generateBits(int n, int[] arr, List<String> bits) {
+
+        if (n < 1) {
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < arr.length; ++i) {
+                result.append(arr[i]);
+            }
+            bits.add(result.toString());
+            return;
+        }
+        arr[n - 1] = 0;
+        generateBits(n - 1, arr, bits);
+
+        arr[n - 1] = 1;
+        generateBits(n - 1, arr, bits);
+    }
+
+    /* Another solution*/
+
+    public static String generateBits(int N, int H) {
+        String temp = "";
+
+        for (int j = 0; j < (1 << N); j++) {
+            boolean stat = Integer.bitCount(j) == H;
+            if (stat)
+                temp = Integer.toBinaryString(j);
+            for (int z = temp.length(); z < N; z++)
+                temp = "0" + temp;
+            if (stat)
+                System.out.println(temp);
+
+        }
+        return temp;
+    }
 }
