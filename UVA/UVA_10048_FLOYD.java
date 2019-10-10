@@ -39,7 +39,7 @@ public class UVA_10048_FLOYD {
       a = sc.nextInt()-1;
       b = sc.nextInt()-1;
       weight = sc.nextInt();
-      AdjMat[a][b] = weight; // directed graph
+      AdjMat[a][b] = weight;
       AdjMat[b][a]=weight;
     }
 
