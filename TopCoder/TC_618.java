@@ -17,10 +17,8 @@ public class TC_618 {
 	
 	static int write(String word)
 	{
-		int c =0;
-		
-		for(int i = 0 ; i < word.length();++i)c +=word.charAt(i)-'A'+1;
-		
-		return c;
+		int sum = 0;
+        for(int i =0; i < word.length();sum += (word.charAt(i)-'A'+1),++i);
+        return sum;
 	}
 }

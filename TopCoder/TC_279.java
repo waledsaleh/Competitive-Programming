@@ -1,33 +1,16 @@
-package Main;
+public class TC_279 {
+    public String makeDancing(String sentence) {
+        StringBuilder result = new StringBuilder();
+        boolean isUpper = false;
+        for (int i = 0; i < sentence.length(); ++i) {
+            char ch = sentence.charAt(i);
+            if (Character.isAlphabetic(ch)) {
+                ch = !isUpper ? Character.toUpperCase(ch) : Character.toLowerCase(ch);
+                isUpper = !isUpper;
+            }
+            result.append(ch);
+        }
 
-public class TC_279{
-
-	public static void main(String[] args) {
-
-		   System.out.println(makeDancing("This is a dancing sentence"));
-		
-	}
-	 static String makeDancing(String sentence)
-	 {
-		 StringBuilder sb = new StringBuilder();
-		
-		boolean f1=true;
-		
-		 for(int i = 0; i < sentence.length();i++)
-		 {
-			if(sentence.charAt(i)!=' ')
-			{
-				sb.append(f1 ? Character.toUpperCase(sentence.charAt(i)):
-					Character.toLowerCase(sentence.charAt(i)));
-				f1 = !f1;
-				
-			}
-			else
-				sb.append(' ');
-			 
-			 
-		 }
-		 
-		 return sb.toString();
-	 }
+        return result.toString();
+    }
 }

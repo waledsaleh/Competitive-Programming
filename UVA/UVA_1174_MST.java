@@ -73,8 +73,6 @@ public class UVA_1174_MST {
 }
 
 
-
-
 class EdgeLink implements Comparable<EdgeLink> {
 
     int src, des, weight;

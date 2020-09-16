@@ -62,7 +62,6 @@ public class UVA_11631_MST {
 }
 
 
-
 class Edge implements Comparable<Edge> {
 
     int src, des, weight;

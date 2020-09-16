@@ -29,8 +29,8 @@ public class UVA_10600_MST {
             int minCost = kruskalAlgo(edge, parent, n, m, offEdge);
 
             for (int i = 0; i < n; ++i) {
-                if(offEdge[i])
-                    secondMST(sortedSet,m,n,parent,edge,i);
+                if (offEdge[i])
+                    secondMST(sortedSet, m, n, parent, edge, i);
 
             }
 
@@ -38,7 +38,7 @@ public class UVA_10600_MST {
         }
     }
 
-    static void secondMST(SortedSet sortedSet, int m,int n, int[] parent, List<GraphEdge> edge,int i) {
+    static void secondMST(SortedSet sortedSet, int m, int n, int[] parent, List<GraphEdge> edge, int i) {
         int secCost = 0, countEdge = 0;
         //reset union-set ds
         for (int k = 1; k < parent.length; ++k) parent[k] = k;

@@ -19,6 +19,7 @@ class Solution13 {
 
         if(text1.charAt(i) == text2.charAt(j))
             return memo[i][j]=1+longestSub(i+1,j+1,text1,text2);
+
         if(memo[i][j] != -1)
             return memo[i][j];
 
